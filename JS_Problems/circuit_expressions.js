@@ -48,27 +48,27 @@ function example(expr) {
       operands.push(chars[i]);
     }
   }
+  let answer;
+  console.log(operator);
   switch (operator) {
     case "&":
-      for (let i = 0; i < operands.length - 1; i++) {
-        if (operands[i] !== operands[i + 1]) {
-          return 0;
-        } else {
-          return 1;
-        }
-      }
+      //
+      answer = operands.reduce((a, b) => {
+        console.log(a && b, "here");
+        return a && b;
+      });
     case "|":
-      for (let i = 0; i < operands.length; i++) {
-        let count = 0;
-        while (operands[i] === 0) {
-          count;
-        }
-      }
+      answer = operands.reduce((a, b) => {
+        console.log(a || b, "second");
+        return a || b;
+      });
     case "!":
-      return !operands[0] ? 1 : 0;
+      console.log(!operands[0] ? 1 : 0, "third");
+    //   answer = !operands[0] ? 1 : 0;s
   }
+  console.log(answer);
 
   // write another function to handle all of the other operator cases
 }
 
-example("[|, 1, 0]");
+example("[|, 0, 1]");
