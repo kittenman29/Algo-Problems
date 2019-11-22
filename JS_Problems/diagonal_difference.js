@@ -25,6 +25,7 @@ Constraints
 Output Format
 
 Print the absolute difference between the sums of the matrix's two diagonals as a single integer.
+
 */
 
 function diagonalDifference(arr) {
