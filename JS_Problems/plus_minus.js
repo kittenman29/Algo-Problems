@@ -46,3 +46,4 @@ function plusMinus(arr) {
   console.log(negative / arr.length);
   console.log(zeroes / arr.length);
 }
+ 
