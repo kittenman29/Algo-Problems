@@ -20,6 +20,7 @@
         "editor.findMatchBorder": "#7CB342",
         "selection.background": "#7CB34240",
         "activityBar.background": "#213208",
+        "activityBar.activeBackground": "#213208",
         "activityBar.activeBorder": "#1a6da5",
         "activityBar.foreground": "#e7e7e7",
         "activityBar.inactiveForeground": "#e7e7e799",
