@@ -6,21 +6,34 @@ from bs4 import BeautifulSoup
 
 
 
+# TODO: Get the list of nodes from the database
+# Loop through the list of nodes and add them to to a dix with key as id and value as node name
+
+
+
+
+"""
+The code below will scrape prices and put them in a dix with the node as the key and the price as value
+
+"""
 page = get("http://www.ercot.com/content/cdr/html/current_np6788")
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
-dix = {}
-
+# find all the node's by element class name, 'tdLeft'
 result = soup.find_all(lambda tag: tag.name == 'td' and tag.get('class') == ['tdLeft'])
 
+# create an empty dictionary to put node's and prices input
+dix = {}
+# create an iterator
 i = 0
-while i <= len(result)-2:
+while i <= len(result)-1:
   unformatted_node = result[i].contents[0]
   node = unformatted_node.strip()
   if node[0].isalpha():
     unformatted_price = result[i+1].contents[0]
-    price = unformatted_price.strip()
+    str_price = unformatted_price.strip()
+    price = float(str_price)
     dix[node] = price
     i += 1
   else:
